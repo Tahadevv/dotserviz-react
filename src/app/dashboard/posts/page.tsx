@@ -43,7 +43,7 @@ const PostsPage = () => {
         } else {
           setError('Failed to fetch posts');
         }
-      } catch (error) {
+      } catch {
         setError('Network error');
       } finally {
         setLoading(false);
@@ -128,7 +128,7 @@ const PostsPage = () => {
       {filteredPosts.length === 0 && searchTerm && (
         <Box sx={{ textAlign: 'center', mt: 4 }}>
           <Typography variant="h6" color="text.secondary">
-            No posts found matching "{searchTerm}"
+            No posts found matching &quot;{searchTerm}&quot;
           </Typography>
         </Box>
       )}

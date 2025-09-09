@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import {
-  Container,
   Typography,
   Card,
   CardContent,
@@ -15,7 +14,6 @@ import {
   Grid,
 } from '@mui/material';
 import { Save as SaveIcon } from '@mui/icons-material';
-import { useAuth } from '@/contexts/AuthContext';
 
 interface UserProfile {
   id: number;
@@ -26,7 +24,6 @@ interface UserProfile {
 }
 
 const ProfilePage = () => {
-  const { user } = useAuth();
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -61,7 +58,7 @@ const ProfilePage = () => {
         } else {
           setError('Failed to fetch profile');
         }
-      } catch (err) {
+      } catch {
         setError('Network error');
       } finally {
         setLoading(false);
