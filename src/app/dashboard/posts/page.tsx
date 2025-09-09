@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import {
-  Container,
   Typography,
   TextField,
   Box,
@@ -44,7 +43,7 @@ const PostsPage = () => {
         } else {
           setError('Failed to fetch posts');
         }
-      } catch (err) {
+      } catch (error) {
         setError('Network error');
       } finally {
         setLoading(false);

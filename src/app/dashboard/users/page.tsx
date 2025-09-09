@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import {
-  Container,
   Typography,
   Table,
   TableBody,
@@ -76,9 +75,9 @@ const UsersPage = () => {
       } else {
         setError('Failed to fetch users');
       }
-    } catch (err) {
-      setError('Network error');
-    } finally {
+      } catch (error) {
+        setError('Network error');
+      } finally {
       setLoading(false);
     }
   };

@@ -43,7 +43,7 @@ interface DashboardLayoutProps {
   children: React.ReactNode;
 }
 
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
+const DashboardLayout: React.FC<DashboardLayoutProps> = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState('users');
   const router = useRouter();
