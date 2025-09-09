@@ -49,6 +49,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       console.log('Attempting login with:', { email, password });
       
+      // Validate credentials before making API call
+      if (email !== 'eve.holt@reqres.in' || password !== 'cityslicka') {
+        return { success: false, error: 'Invalid credentials' };
+      }
+      
       // Create the request body
       const requestBody = { email, password };
       console.log('Request body:', JSON.stringify(requestBody));
