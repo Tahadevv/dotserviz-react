@@ -75,7 +75,7 @@ const UsersPage = () => {
       } else {
         setError('Failed to fetch users');
       }
-      } catch (error) {
+      } catch {
         setError('Network error');
       } finally {
       setLoading(false);
